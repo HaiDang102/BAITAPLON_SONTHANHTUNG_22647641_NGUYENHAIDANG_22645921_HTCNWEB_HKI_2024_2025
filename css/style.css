@@ -7,19 +7,22 @@
 header {
     position: relative;
     height: 50px;
+    
 }
 
+
 header .logo {
-    position: absolute;
+    position: fixed;
     left: 20px;
     top: 0;
+    z-index: 999;
 }
 
 header img {
     position: absolute;
-    left: 20px;
+    left: -5px;
     top: 0;
-    height: 100px;
+    height: 50px;
     width: 100px;
 }
 
@@ -49,8 +52,8 @@ header .responsive {
         transform: translateX(35px);
     }
     .banner h4 {
-        font-size: 25px;
-        font-weight: bold;
+        font-size: 20px;
+        font-weight: 900;
     }
     nav {
         position: absolute;
@@ -186,7 +189,7 @@ section.home {
 }
 
 .slide {
-    display: none;
+    display: block;
 }
 
 .slide.active {
@@ -223,7 +226,7 @@ section.home h4 {
     transform: translate(-50%, -50%);
     color: white;
     font-weight: 900;
-    font-size: 45px;
+    font-size: 40px;
 }
 
 section.banner {
@@ -235,14 +238,63 @@ section.banner .danhsach {
     display: flex;
     justify-content: space-around;
 }
+/* giới thiện trang home */
 
 section.banner .danhsach .box {
     margin-top: 30px;
+    margin: 2px;
     width: auto;
     display: flex;
     text-decoration: none;
     color: black;
 }
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.content-1 {
+    display: inline-block;
+    animation: moveUpDown 2s infinite;
+    color: red;
+    font-size: larger;
+}
+.btn-primary {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+section.banner .danhsach .box span button{
+    background-color: #b5090f;
+}
+
+/* button sale */
+
+
+.button-sale {
+    background-color: #c60a11;
+    color: white;
+    display: inline-block;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    animation: 
+        shake-left-right 0.5s ease-in-out infinite, 
+        jump-up-down 0.5s ease-in-out infinite;
+    cursor: pointer;
+}
+
 
 section.banner .danhsach img {
     width: 200px;
